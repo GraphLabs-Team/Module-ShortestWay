@@ -13,6 +13,7 @@ interface IGraphControllerProps<T1, T2> {
     is_nodeid_visible?: boolean,
     is_weights_visible?: boolean,
     is_weights_node_visible?: boolean,
+    on_weights_changed?: ()=>void,
 }
 
 
@@ -252,6 +253,9 @@ export class GraphController<T1, T2> extends React.Component<IGraphControllerPro
                     this.forceUpdate()
                     }
                 );
+                if (this.props.on_weights_changed != null) {
+                    this.props.on_weights_changed()
+                }
             }
         });
         document.getElementById("writeNodeWeight")?.addEventListener("click", () => {            
