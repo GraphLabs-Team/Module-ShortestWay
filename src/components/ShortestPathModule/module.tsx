@@ -14,11 +14,12 @@ export class ModuleExample<T1, T2> extends Template<T1, T2> {
     protected override task_area(){
         return () => <div>
             <p><b>Введите длину кратчайшего пути:</b></p>
-            <input type="number" id="AnswerInput" name="AnswerName"/></div>
+            <input type="number" id="AnswerInput" name="AnswerName"/>
+            <p><b>Таблица веса вершин:</b></p> </div>
     }
 
     protected override generateGraph(){
-        let graph: Graph<T1, T2> = GraphGenerator.random(6, 0.5)
+        let graph: Graph<T1, T2> = GraphGenerator.random(7, 0.5)
         return graph
     }
 
