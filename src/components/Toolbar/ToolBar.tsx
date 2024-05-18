@@ -45,6 +45,7 @@ export class ToolBar extends React.Component<IToolBarProps> {
             button_list.push(<input type="color" id="nodeColor" className="colorInput" name="nodeColor"/>)
             button_list.push(<button id="recolorNodeButton" className={"toolButton"} type="button">Раскрасить вершину</button>)
             button_list.push(<button id="recolorEdgeButton" className={"toolButton"} type="button">Раскрасить ребро</button>)
+            button_list.push(<button id="uncolorEdgeButton" className={"toolButton"} type="button">Снять окрашивание с ребра</button>)
         }
         if (this.props.graph_adj_coloring_buttons){
             button_list.push(<button id="colorAdjNodeButton" className={"toolButton"} type="button">Выделить смежные вершины</button>)
