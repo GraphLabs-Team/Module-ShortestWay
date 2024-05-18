@@ -170,6 +170,22 @@ export class GraphController<T1, T2> extends React.Component<IGraphControllerPro
             }
         });
 
+        document.getElementById("uncolorEdgeButton")?.addEventListener("click", () => {            
+            let selected = this.cy?.edges(":selected")
+            if (selected){                
+                selected.forEach(element => {
+                    let node_source = this.props.graph.getNode(element.source().id())
+                    let node_target = this.props.graph.getNode(element.target().id())
+                    if (node_source && node_target){
+                        let edge = this.props.graph.getEdge(node_source, node_target)
+                        let color = ""
+                        edge?.setColor(color)
+                        this.forceUpdate()
+                    }
+                });
+            }
+        });
+
         document.getElementById("colorAdjNodeButton")?.addEventListener("click", () => {    
             let selected = this.cy?.nodes(":selected")[0];
             if (selected){         
